@@ -1,0 +1,64 @@
+{
+  "palavras": [
+    {
+      "palavra": "Polimorfismo",
+      "dificuldade": 1
+    },
+    {
+      "palavra": "Parnasianismo",
+      "dificuldade": 1
+    },
+    {
+      "palavra": "Paralelepípedo",
+      "dificuldade": 1
+    },
+    {
+      "palavra": "Esquelético",
+      "dificuldade": 1
+    },
+    {
+      "palavra": "Oftalmotorrinolaringologista",
+      "dificuldade": 1
+    },
+    {
+      "palavra": "Onomatopéia",
+      "dificuldade": 0
+    },
+    {
+      "palavra": "Urso Panda",
+      "dificuldade": 0
+    },
+    {
+      "palavra": "Bulbasaur",
+      "dificuldade": 0
+    },
+    {
+      "palavra": "Girassol",
+      "dificuldade": 0
+    },
+    {
+      "palavra": "Caracol",
+      "dificuldade": 0
+    },
+    {
+      "nome": "teste de adicao",
+      "Dificuldade": 1,
+      "id": "dab0c726-2982-4a3e-94d6-173f208c1277"
+    },
+    {
+      "nome": "teste de adicao2",
+      "Dificuldade": 1,
+      "id": "268d1baf-04c6-4cc4-83c7-74bc2eda09e8"
+    },
+    {
+      "nome": "aaaaa",
+      "Dificuldade": 1,
+      "id": "c46b73b8-59eb-4ac9-8bd4-0a8885c7be67"
+    },
+    {
+      "nome": "adsad",
+      "Dificuldade": 1,
+      "id": "4e1d11ad-8b55-481f-8b56-6dee44df9849"
+    }
+  ]
+}

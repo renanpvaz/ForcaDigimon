@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Forca</title>
+
+    <link rel="stylesheet" href="css/forca.css" />
+  </head>
+
+  <body>
+    <h2>Jogo da forca<h2>
+
+        Nome: <input type="text" id="Nome" placeholder="Digite seu Nome"/>
+        <br>
+        Dificuldade
+        <br>
+        <select id='selectDificuldade'>
+          <option value="1" >Normal</option>
+          <option value="2" >Nunes</option>
+        </select>
+        <br>
+
+        <button id="btJogar">Jogar</button>
+
+        <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script tye="text/javascript">
+
+          var urlPalavras = 'http://localhost:3000/palavras';
+
+          var select = document.getElementById("selectDificuldade");
+          var valorDificuldade = select.options[select.selectedIndex].value;
+
+          $('#btJogar').click(function(){
+            $.post(urlPalavras,{
+              nome: $('#Nome').val() , Dificuldade: valorDificuldade
+            }).done(function() {
+              redirect();
+            });
+          });
+
+        </script>
+
+        <script type="text/javascript">
+
+          function iniciaJogo(){
+            $.get(urlPalavras).done(function(palavras){
+            var aleatorio = pegaNumeroAleatorio(0, 9);
+                var difPalavra = palavras[aleatorio].dificuldade;
+                var pDificuldade = select.options[select.selectedIndex].value;
+                    var palavraAleatorio = palavras[aleatorio].palavra;
+                    console.log(subb(palavraAleatorio));
+                    $('#jogo').append('<p>').html('subb(palavraAleatorio)');
+            });
+          };
+        </script>
+
+        <script>
+                function subb(palavra){
+                  var teste = palavra.replace(/[^\s-]/g, '_').split('').join('');
+                  return teste;
+                }
+        </script>
+
+        <script>
+          function pegaNumeroAleatorio(min, max){
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+          }
+        </script>
+
+        <script type="text/javascript">
+
+        function redirect(){
+          window.location = "donzela-de-ferro.html";
+        }
+        </script>
+
+        <script>
+        String.prototype.substituirPorUnderline = function(){
+          return this.replace(/[^\s-]/g, '_').split('').join('');
+        }
+
+
+        Array.prototype.substituirPosicaoPorLetra = function(palavra, letra){
+          var self = this;
+          var last = palavra[palavra.lenght-1];
+          if(palavra.includes(letra)){
+            self.forEach(function(elem){
+              self.splice(palavra.indexOf(letra), 1, letra);
+              palavra = palavra.replace(letra, '_');
+              });
+              self.
+              return self;
+            }
+        }
+        </script>
+  </body>
+
+</html>
