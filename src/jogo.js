@@ -1,5 +1,4 @@
 function Jogo(nomeJogador, dificuldade){
-  pegarPalavraAleatoria(dificuldade);
   this.palavra = $('li').html();
   this.espacosPalavra = this.palavra.substituirPorUnderline() ;
   this.countErros = 0;
