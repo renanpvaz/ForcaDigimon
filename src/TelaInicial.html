@@ -39,6 +39,7 @@
             var select = document.getElementById("selectDificuldade");
             var valorDificuldade = select.options[select.selectedIndex].value;
             var nomeJogador = $('#Nome').val();
+            var jogo;
             $.post(urlUsuarios,{
               nome: nomeJogador , Dificuldade: valorDificuldade, pontuacao: 0
             }).done(function() {

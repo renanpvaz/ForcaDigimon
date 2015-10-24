@@ -25,25 +25,11 @@ function pegaNumeroAleatorio(min, max){
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function pegarPalavraAleatoria(dificuldade){
+function buscarPalavra(dificuldade){
+  var urlBusca = 'http://localhost:3000/' + dificuldade;
 
-  var urlPalavras;
-
-  if(dificuldade === 0){
-    urlPalavras = 'http://localhost:3000/0';
-  }else{
-    urlPalavras = 'http://localhost:3000/1';
-  }
-    //TODO: retornar palavraAleatoria invés de usar .append()
-    // esconder resposta
-
-    $.get(urlPalavras).done(
-      function(palavras){
-        var random = pegaNumeroAleatorio(0, palavras.length - 1);
-        var palavraAleatoria = palavras[random];
-
-        document.getElementById("palavra").innerHTML = palavraAleatoria;
-        document.getElementById("palavra").style.visibility = "hidden";
-
-    })
+  return $.ajax({
+    url: urlBusca,
+    type: 'GET'
+  });
 }
