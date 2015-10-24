@@ -16,8 +16,8 @@
         Dificuldade
         <br>
         <select id='selectDificuldade'>
-          <option value="1" >Normal</option>
-          <option value="2" >Nunes</option>
+          <option value="0" >Normal</option>
+          <option value="1" >Nunes</option>
         </select>
         <br>
 
@@ -28,14 +28,16 @@
 
           var urlPalavras = 'http://localhost:3000/palavras';
 
-          var select = document.getElementById("selectDificuldade");
-          var valorDificuldade = select.options[select.selectedIndex].value;
+
 
           $('#btJogar').click(function(){
+            var select = document.getElementById("selectDificuldade");
+            var valorDificuldade = select.options[select.selectedIndex].value;
             $.post(urlPalavras,{
               nome: $('#Nome').val() , Dificuldade: valorDificuldade
             }).done(function() {
-              redirect();
+              //redirect();
+              iniciaJogo(valorDificuldade);
             });
           });
 
@@ -43,14 +45,14 @@
 
         <script type="text/javascript">
 
-          function iniciaJogo(){
+          function iniciaJogo(valorDificuldade){
             $.get(urlPalavras).done(function(palavras){
-            var aleatorio = pegaNumeroAleatorio(0, 9);
-                var difPalavra = palavras[aleatorio].dificuldade;
-                var pDificuldade = select.options[select.selectedIndex].value;
-                    var palavraAleatorio = palavras[aleatorio].palavra;
-                    console.log(subb(palavraAleatorio));
-                    $('#jogo').append('<p>').html('subb(palavraAleatorio)');
+
+            var aleatorio = valorDificuldade == 1 ? pegaNumeroAleatorio(0, 4) : pegaNumeroAleatorio(5, 9);
+
+            var palavraAleatorio = palavras[aleatorio].palavra;
+            //alert(palavraAleatorio);
+                //$('#jogo').append('<p>').html('subb(palavraAleatorio)');
             });
           };
         </script>
