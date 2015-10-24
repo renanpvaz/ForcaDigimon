@@ -32,13 +32,14 @@
           //TODO: criar um jogo novo ao clicar botão
 
           $('#btJogar').click(function(){
+            var urlUsuarios = 'http://localhost:3000/2';
             var select = document.getElementById("selectDificuldade");
             var valorDificuldade = select.options[select.selectedIndex].value;
-            $.post(urlPalavras,{
-              nome: $('#Nome').val() , Dificuldade: valorDificuldade
+            var nomeJogador = $('#Nome').val();
+            $.post(urlUsuarios,{
+              nome: nomeJogador , Dificuldade: valorDificuldade, pontuacao: 0
             }).done(function() {
-              //redirect();
-              iniciaJogo(valorDificuldade);
+              Jogo(nomeJogador,valorDificuldade);
             });
           });
 
