@@ -36,16 +36,19 @@
 
           $('#btJogar').click(function(){
             var urlUsuarios = 'http://localhost:3000/2';
-            var select = document.getElementById("selectDificuldade");
-            var valorDificuldade = select.options[select.selectedIndex].value;
+            var dificuldade = $("#selectDificuldade").val();
             var nomeJogador = $('#Nome').val();
-            var jogo;
+            var jogo = new Jogo(nomeJogador, dificuldade);
+            
+            /*
             $.post(urlUsuarios,{
               nome: nomeJogador , Dificuldade: valorDificuldade, pontuacao: 0
             }).done(function() {
               Jogo(nomeJogador,valorDificuldade);
             });
+            */
           });
+
 
         </script>
 
