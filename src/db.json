@@ -1,23 +1,19 @@
 [
-
   [
     "Onomatopéia",
-    "Urso Panda","Bulbasaur",
+    "Urso Panda",
+    "Bulbasaur",
     "Girassol",
     "Caracol"
   ],
-
   [
     "Polimorfismo",
     "Parnasianismo",
-    "Paralelepípedo","Esquelético",
+    "Paralelepípedo",
+    "Esquelético",
     "Oftalmotorrinolaringologista"
   ],
-
   {
-    "usuarios":
-    [
-
-    ]
+    "usuarios": []
   }
 ]

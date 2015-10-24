@@ -1,6 +1,6 @@
 function Jogo(nomeJogador, dificuldade){
-  this.palavra = 'aaaaa' || pegarPalavraAleatoria(dificuldade); //TODO: pegar .val() do <li>
-  this.espacosPalavra = '_ _ _ _ _ _' || this.palavra.substituirPorUnderline().join('')  ;
+  this.palavra = $('li').html();
+  this.espacosPalavra = this.palavra.substituirPorUnderline() ;
   this.countErros = 0;
   this.nomeJogador = nomeJogador;
   this.dificuldade = dificuldade;
