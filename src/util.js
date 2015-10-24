@@ -1,3 +1,8 @@
+function substituirPorUnderline(palavra){
+  var teste = palavra.replace(/[^\s-]/g, '_').split('').join('');
+  return teste;
+}
+
 String.prototype.substituirPorUnderline = function(){
 return this.replace(/[^\s-]/g, '_').split('').join('');
 }
@@ -36,6 +41,7 @@ function pegarPalavraAleatoria(dificuldade){
       function(palavras){
         var random = pegaNumeroAleatorio(0, palavras.length - 1);
         var palavraAleatoria = palavras[random];
-        $('ul').append($('<li>').html(palavraAleatoria));
+        //document.getElementById("palavra").style.visibility = "hidden";
+        document.getElementById("palavra").innerHTML = palavraAleatoria;
     })
 }
