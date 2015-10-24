@@ -41,7 +41,9 @@ function pegarPalavraAleatoria(dificuldade){
       function(palavras){
         var random = pegaNumeroAleatorio(0, palavras.length - 1);
         var palavraAleatoria = palavras[random];
-        //document.getElementById("palavra").style.visibility = "hidden";
+
         document.getElementById("palavra").innerHTML = palavraAleatoria;
+        document.getElementById("palavra").style.visibility = "hidden";
+
     })
 }
