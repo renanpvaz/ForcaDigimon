@@ -23,7 +23,6 @@ Array.prototype.substituirPosicaoPorLetra = function(palavra, letra){
   function pegarPalavraAleatoria(dificuldade){
 
     var urlPalavras;
-    var palavraAleatoria;
 
     if(dificuldade === 0){
       urlPalavras = 'http://localhost:3000/0';
@@ -32,12 +31,10 @@ Array.prototype.substituirPosicaoPorLetra = function(palavra, letra){
     }
 
     //TODO: retornar palavraAleatoria invés de usar .append()
-
-    $.get(urlPalavras).done(
-      function(palavras){
-        var random = pegaNumeroAleatorio(0, palavras.length);
-        palavraAleatoria = palavras[random];
-        $('ul').append($('<li>').html(palavraAleatoria));
-    })
-
+      $.get(urlPalavras).done(
+        function(palavras){
+          var random = pegaNumeroAleatorio(0, palavras.length - 1);
+          var palavraAleatoria = palavras[random];
+          $('ul').append($('<li>').html(palavraAleatoria));
+      })
   }
