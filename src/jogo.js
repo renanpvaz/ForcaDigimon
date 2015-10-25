@@ -7,7 +7,7 @@ function Jogo(jogador, dificuldade){
   this.dificuldade = dificuldade;
   this.pontuacao = 0;
   this.jogador = jogador;
-  this.id = 0;
+  this.letrasUsadas = new Array();
   $('#mostraFrase').text(this.espacosPalavra);
 }
 
@@ -42,11 +42,13 @@ Jogo.prototype.atribuirPalavraAleatoria = function(){
         });
 }
 
-Jogo.prototype.substituirPosicaoPorLetra = function(letra){
+Jogo.prototype.chutarLetra = function(letra){
   var self = this;
   var espacos = self.espacosPalavra.split('');
   var palavra = self.palavra.toLowerCase();
   var letra = letra.toLowerCase();
+
+  self.letrasUsadas.push(letra);
 
   if(palavra.includes(letra)){
     self.pontuacao += 1;
@@ -61,6 +63,15 @@ Jogo.prototype.substituirPosicaoPorLetra = function(letra){
     }
   }
 
+Jogo.prototype.chutarPalavra = function(palavra){
+
+  if(palavra === this.palavra){
+    $('#mostraPalavra').html(this.palavra);
+  }else{
+    this.countErros = 6;
+  }
+}
+
 function atribuirPalavraAleatoria (dificuldade){
     buscarPalavra(dificuldade).done(
       function(response){
@@ -74,7 +85,7 @@ function atribuirPalavraAleatoria (dificuldade){
 
 function ordenaTopFive(){
   var pontuacao = 'pontuacao';
-  buscaJogadores().done(
+  buscaTopFive().done(
     function(response){
       ordenaProAtributo(response,pontuacao)
       })
@@ -84,17 +95,10 @@ function ordenaProAtributo(response,pontuacao){
     var topFive = response.sort(function(valorA,valorB){
     return valorA[pontuacao] < valorB[pontuacao];
   });
+    $('#showTopFive').html('');
     for(var i = 0; i < 5;i++){
       var listaPontuacao = 'Nome:' + topFive[i].nome+' Pontuação:'+ topFive[i].pontuacao;
       $('#showTopFive').append(listaPontuacao);
       $('#showTopFive').append('<br>');
     }
-};
-
-function buscaIdJogador(jogador){
-  buscaJogadores().done(
-    function(response){
-      var idJogador = response[response.length -1].id;
-      jogador.id = idJogador;
-    })
-};
+}
