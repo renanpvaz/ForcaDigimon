@@ -28,7 +28,7 @@
         <p id="mostraPalavra" class="mostraPalavra"></p>
       </section>
 
-      <div class="menu">
+      <div id="menuJogo" class="menu">
         Nome: <input type="text" id="Nome" placeholder="Digite seu Nome"/>
         <br>
         Dificuldade
@@ -55,6 +55,7 @@
             var dificuldade = $("#selectDificuldade").val();
             var nomeJogador = $('#Nome').val();
             var jogo = new Jogo(nomeJogador, dificuldade);
+            $('#menuJogo').hide();
             console.log(jogo);
             /*
             $.post(urlUsuarios,{
