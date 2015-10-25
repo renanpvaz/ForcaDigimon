@@ -36,14 +36,18 @@ Jogo.prototype.atribuirPalavraAleatoria = function(){
 Jogo.prototype.substituirPosicaoPorLetra = function(letra){
   var self = this;
   var espacos = self.espacosPalavra.split('');
-  var palavra = self.palavra;
+  var palavra = self.palavra.toLowerCase();
+  var letra = letra.toLowerCase();
+  
   if(palavra.includes(letra)){
-    espacos.forEach(function(elem){
-      espacos.splice(palavra.indexOf(letra), 1, letra);
-      palavra = palavra.replace(letra, ' _ ');
+    espacos.forEach(function(elem, index){
+      if(palavra[index] == letra)
+        espacos.splice(index, 1, letra);
       });
       self.espacosPalavra = espacos.join('');
       return self;
+    }else{
+      self.countErros += 1;
     }
   }
 
