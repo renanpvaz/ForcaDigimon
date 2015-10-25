@@ -5,16 +5,30 @@
 
     <title>Forca</title>
 
+    <style>
+    .palavraOculta{
+      display: none;
+    }
+    .mostraPalavra{
+      margin: 0px
+      display: block;
+    }
+
+    .menu{
+      margin: 100px;
+    }
+    </style>
     <link rel="stylesheet" href="css/forca.css" />
   </head>
 
   <body>
     <h2>Jogo da forca<h2>
       <section>
-        <p id="palavra" style="hidden" display="none"></p>
-        <p id="mostraPalavra"></p>
+        <p id="palavra" class="palavraOculta"></p>
+        <p id="mostraPalavra" class="mostraPalavra"></p>
       </section>
 
+      <div class="menu">
         Nome: <input type="text" id="Nome" placeholder="Digite seu Nome"/>
         <br>
         Dificuldade
@@ -24,8 +38,10 @@
           <option value="1" >Nunes</option>
         </select>
         <br>
+            <button id="btJogar">Jogar</button>
+      </div>
 
-        <button id="btJogar">Jogar</button>
+
 
         <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
         <script src="jogo.js"></script>
@@ -33,7 +49,7 @@
         <script type="text/javascript">
 
           //TODO: criar um jogo novo ao clicar botão
-
+          atribuirPalavraAleatoria (0);
           $('#btJogar').click(function(){
             var urlUsuarios = 'http://localhost:3000/2';
             var dificuldade = $("#selectDificuldade").val();
