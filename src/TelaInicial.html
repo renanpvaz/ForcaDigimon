@@ -89,6 +89,7 @@
               $('#mostraFrase').html(' Erros:' + jogo.countErros);
 
               if($('#mostraPalavra').html() === jogo.palavra.toLowerCase()){
+                jogo.letrasUsadas = new Array();
                 jogador.armazenaPalavras($('#mostraPalavra').html());
                 jogo.atribuirPalavraAleatoria();
                 $('#mostraPalavra').html(jogo.espacosPalavra);
