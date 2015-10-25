@@ -82,7 +82,7 @@
 
           $('#btLetra').click(function(){
             if(jogo.countErros < 6){
-              jogo.substituirPosicaoPorLetra($('#campoDaLetra').val());
+              jogo.chutarLetra($('#campoDaLetra').val());
               $('#campoDaLetra').val('');
               $('#mostraPalavra').html(jogo.espacosPalavra);
               $('#mostraFrase').html(' Erros:' + jogo.countErros);
