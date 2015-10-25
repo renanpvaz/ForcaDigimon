@@ -17,6 +17,11 @@
     .menu{
       margin: 100px;
     }
+
+    .placar{
+      margin-right: 90%;
+      margin-top: -12%;
+    }
     </style>
     <link rel="stylesheet" href="css/forca.css" />
   </head>
@@ -46,13 +51,16 @@
         <button id="btLetra">Chutar Letra</button>
       </div>
 
-
+      <div class="placar" id="pontuacao">
+        <h3 id="valorPontuacao">Pontuacao:</h3>
+      </div>
 
         <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
         <script src="jogo.js"></script>
         <script src="util.js"></script>
         <script type="text/javascript">
         $('#menuPalpite').hide();
+        $('#pontuacao').hide();
         var jogo;
 
           //TODO: criar um jogo novo ao clicar botão
@@ -64,6 +72,9 @@
             jogo = new Jogo(nomeJogador, dificuldade);
             $('#menuJogo').hide();
             $('#menuPalpite').show();
+            $('#pontuacao').show();
+            var placarTotal = 'Pontuacao '+ jogo.pontuacao
+            $('#valorPontuacao').text(placarTotal);
             console.log(jogo);
             /*
             $.post(urlUsuarios,{
