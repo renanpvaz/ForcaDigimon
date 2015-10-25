@@ -46,6 +46,7 @@ Jogo.prototype.substituirPosicaoPorLetra = function(letra){
         espacos.splice(index, 1, letra);
       });
       self.espacosPalavra = espacos.join('');
+      self.pontuacao++;
       return self;
     }else{
       self.countErros += 1;
