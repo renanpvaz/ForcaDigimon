@@ -41,12 +41,18 @@
             <button id="btJogar">Jogar</button>
       </div>
 
+      <div id="menuPalpite">
+        <input type="text" placeholder="Digite uma letra!">
+      </div>
+
 
 
         <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
         <script src="jogo.js"></script>
         <script src="util.js"></script>
         <script type="text/javascript">
+        $('#menuPalpite').hide();
+
 
           //TODO: criar um jogo novo ao clicar botão
           atribuirPalavraAleatoria (0);
@@ -56,6 +62,7 @@
             var nomeJogador = $('#Nome').val();
             var jogo = new Jogo(nomeJogador, dificuldade);
             $('#menuJogo').hide();
+            $('#menuPalpite').show();
             console.log(jogo);
             /*
             $.post(urlUsuarios,{
