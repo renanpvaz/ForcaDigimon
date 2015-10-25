@@ -62,7 +62,6 @@
         $('#menuPalpite').hide();
         $('#pontuacao').hide();
         var jogo;
-
           //TODO: criar um jogo novo ao clicar botão
           atribuirPalavraAleatoria (0);
           $('#btJogar').click(function(){
@@ -75,12 +74,12 @@
             $('#pontuacao').show();
             var placarTotal = 'Pontuacao '+ jogo.pontuacao
             $('#valorPontuacao').text(placarTotal);
-            console.log(jogo);
+            //console.log(jogo);
             /*
             $.post(urlUsuarios,{
-              nome: nomeJogador , Dificuldade: valorDificuldade, pontuacao: 0
+              nome: nomeJogador , Dificuldade: dificuldade, pontuacao: 0
             }).done(function() {
-              Jogo(nomeJogador,valorDificuldade);
+              alert('done');
             });
             */
           });
@@ -91,16 +90,13 @@
               $('#campoDaLetra').val('');
               $('#mostraPalavra').html(jogo.espacosPalavra + ' Erros:' + jogo.countErros);
 
-              if($('#mostraPalavra').html() == jogo.palavra.toLowerCase() + ' Erros:' + jogo.countErros){
-                atribuirPalavraAleatoria(jogo.dificuldade);
-                $('#mostraPalavra').html(substituirPorUnderline($('#palavra').text()));
-                jogo.palavra = $('#palavra').text();
-                jogo.espacosPalavra = $('#mostraPalavra').html();
-              }
             }
             else{
               $('#mostraPalavra').html('Game Over');
             }
+
+            var placarTotal = 'Pontuacao '+ jogo.pontuacao
+            $('#valorPontuacao').text(placarTotal);
           });
 
 
