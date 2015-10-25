@@ -91,13 +91,14 @@
               $('#campoDaLetra').val('');
               $('#mostraPalavra').html(jogo.espacosPalavra + ' Erros:' + jogo.countErros);
 
+              if($('#mostraPalavra').html() == jogo.palavra.toLowerCase() + ' Erros:' + jogo.countErros){
+                atribuirPalavraAleatoria(jogo.dificuldade);
+                $('#mostraPalavra').html(substituirPorUnderline($('#palavra').text()));
+              }
             }
             else{
               $('#mostraPalavra').html('Game Over');
             }
-
-            var placarTotal = 'Pontuacao '+ jogo.pontuacao
-            $('#valorPontuacao').text(placarTotal);
           });
 
 
