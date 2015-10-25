@@ -7,7 +7,6 @@ body{
 .mostraPalavra{
   margin: 0px;
   display: block;
-  visibility: hidden;
 }
 
 .menu{
@@ -17,9 +16,7 @@ body{
 .placar{
   margin-right: 90%;
   margin-top: -12%;
-  visibility: hidden;
 }
 
 .palpite{
-  visibility: hidden;
 }
