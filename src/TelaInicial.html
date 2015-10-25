@@ -5,24 +5,6 @@
 
     <title>Forca</title>
 
-    <style>
-    .palavraOculta{
-      display: none;
-    }
-    .mostraPalavra{
-      margin: 0px;
-      display: block;
-    }
-
-    .menu{
-      margin: 100px;
-    }
-
-    .placar{
-      margin-right: 90%;
-      margin-top: -12%;
-    }
-    </style>
     <link rel="stylesheet" href="css/forca.css" />
   </head>
 
@@ -30,7 +12,8 @@
     <h2>Jogo da forca<h2>
       <section>
         <p id="palavra" class="palavraOculta"></p>
-        <p id="mostraPalavra" class="mostraPalavra"></p>
+        <span id="mostraPalavra"></span>
+        <p id="mostraFrase" class="mostraPalavra"></p>
       </section>
 
       <div id="menuJogo" class="menu">
@@ -58,6 +41,7 @@
         <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
         <script src="jogo.js"></script>
         <script src="util.js"></script>
+        <script src="jogador.js"></script>
         <script type="text/javascript">
 
         //TODO: corrigir ocultação dos menus (onDomReady)
@@ -71,7 +55,8 @@
             var urlUsuarios = 'http://localhost:3000/2';
             var dificuldade = $("#selectDificuldade").val();
             var nomeJogador = $('#Nome').val();
-            jogo = new Jogo(nomeJogador, dificuldade);
+            jogador = new Jogador(nomeJogador);
+            jogo = new Jogo(jogador, dificuldade);
             $('#menuJogo').hide();
             $('#menuPalpite').show();
             $('#pontuacao').show();
@@ -91,9 +76,11 @@
             if(jogo.countErros < 6){
               jogo.substituirPosicaoPorLetra($('#campoDaLetra').val());
               $('#campoDaLetra').val('');
-              $('#mostraPalavra').html(jogo.espacosPalavra + ' Erros:' + jogo.countErros);
+              $('#mostraPalavra').html(jogo.espacosPalavra);
+              $('#mostraFrase').html(' Erros:' + jogo.countErros);
 
-              if($('#mostraPalavra').html() == jogo.palavra.toLowerCase() + ' Erros:' + jogo.countErros){
+              if($('#mostraPalavra').html() === jogo.palavra.toLowerCase()){
+                jogador.armazenaPalavras($('#mostraPalavra').html());
                 atribuirPalavraAleatoria(jogo.dificuldade);
                 $('#mostraPalavra').html(substituirPorUnderline($('#palavra').text()));
                 jogo.palavra = $('#palavra').text();

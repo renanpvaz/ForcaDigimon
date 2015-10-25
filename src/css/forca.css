@@ -1,3 +1,19 @@
 body{
   text-align: center;
 }
+.palavraOculta{
+  display: none;
+}
+.mostraPalavra{
+  margin: 0px;
+  display: block;
+}
+
+.menu{
+  margin: 100px;
+}
+
+.placar{
+  margin-right: 90%;
+  margin-top: -12%;
+}

@@ -1,14 +1,13 @@
-function Jogo(nomeJogador, dificuldade){
+function Jogo(jogador, dificuldade){
   atribuirPalavraAleatoria (dificuldade);
   this.palavra = $('#palavra').text();
   console.log(this.palavra);
   this.espacosPalavra = substituirPorUnderline(this.palavra);
   //console.log(espacosPalavra);
   this.countErros = 0;
-  this.nomeJogador = nomeJogador;
   this.dificuldade = dificuldade;
   this.pontuacao = 0;
-  $('#mostraPalavra').text(this.espacosPalavra);
+  $('#mostraFrase').text(this.espacosPalavra);
 }
 
 //var jogo = new Jogo($('#Nome').val(), 0 || 1 )
