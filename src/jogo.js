@@ -41,7 +41,7 @@ Jogo.prototype.atribuirPalavraAleatoria = function(){
         });
 }
 
-Jogo.prototype.substituirPosicaoPorLetra = function(letra){
+Jogo.prototype.chutarLetra = function(letra){
   var self = this;
   var espacos = self.espacosPalavra.split('');
   var palavra = self.palavra.toLowerCase();
@@ -59,6 +59,15 @@ Jogo.prototype.substituirPosicaoPorLetra = function(letra){
       self.countErros += 1;
     }
   }
+
+Jogo.prototype.chutarPalavra = function(palavra){
+
+  if(palavra === this.palavra){
+    $('#mostraPalavra').html(this.palavra);
+  }else{
+    this.countErros = 6;
+  }
+}
 
 function atribuirPalavraAleatoria (dificuldade){
     buscarPalavra(dificuldade).done(
