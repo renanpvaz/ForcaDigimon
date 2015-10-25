@@ -3,10 +3,10 @@ function Jogo(jogador, dificuldade){
   this.palavra = $('#palavra').text();
   console.log(this.palavra);
   this.espacosPalavra = substituirPorUnderline(this.palavra);
-  //console.log(espacosPalavra);
   this.countErros = 0;
   this.dificuldade = dificuldade;
   this.pontuacao = 0;
+  this.jogador = jogador;
   $('#mostraFrase').text(this.espacosPalavra);
 }
 
