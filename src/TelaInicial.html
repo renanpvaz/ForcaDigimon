@@ -59,10 +59,13 @@
         <script src="jogo.js"></script>
         <script src="util.js"></script>
         <script type="text/javascript">
+
+        //TODO: corrigir ocultação dos menus (onDomReady)
         $('#menuPalpite').hide();
         $('#pontuacao').hide();
+
         var jogo;
-          //TODO: criar um jogo novo ao clicar botão
+
           atribuirPalavraAleatoria (0);
           $('#btJogar').click(function(){
             var urlUsuarios = 'http://localhost:3000/2';
