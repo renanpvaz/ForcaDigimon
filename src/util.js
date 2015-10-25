@@ -25,7 +25,7 @@ function buscarPalavra(dificuldade){
   });
 }
 
-function buscaTopFive(){
+function buscaJogadores(){
   var urlBusca = 'http://localhost:3000/2';
 
   return $.ajax({
@@ -36,3 +36,15 @@ function buscaTopFive(){
     }
   });
 };
+
+function buscaTopFive(){
+  var urlBusca = 'http://localhost:3000/2'
+
+  return $.ajax({
+    url: urlBusca,
+    type: 'GET',
+    complete: function(data){
+      result = data
+    }
+  });
+}

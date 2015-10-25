@@ -7,6 +7,7 @@ function Jogo(jogador, dificuldade){
   this.dificuldade = dificuldade;
   this.pontuacao = 0;
   this.jogador = jogador;
+  this.letrasUsadas = new Array();
   $('#mostraFrase').text(this.espacosPalavra);
 }
 
@@ -46,6 +47,8 @@ Jogo.prototype.chutarLetra = function(letra){
   var espacos = self.espacosPalavra.split('');
   var palavra = self.palavra.toLowerCase();
   var letra = letra.toLowerCase();
+
+  self.letrasUsadas.push(letra);
 
   if(palavra.includes(letra)){
     self.pontuacao += 1;
@@ -92,6 +95,7 @@ function ordenaProAtributo(response,pontuacao){
     var topFive = response.sort(function(valorA,valorB){
     return valorA[pontuacao] < valorB[pontuacao];
   });
+    $('#showTopFive').html('');
     for(var i = 0; i < 5;i++){
       var listaPontuacao = 'Nome:' + topFive[i].nome+' Pontuação:'+ topFive[i].pontuacao;
       $('#showTopFive').append(listaPontuacao);
