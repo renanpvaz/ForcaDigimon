@@ -10,7 +10,7 @@
       display: none;
     }
     .mostraPalavra{
-      margin: 0px
+      margin: 0px;
       display: block;
     }
 
@@ -75,9 +75,15 @@
           });
 
           $('#btLetra').click(function(){
-            jogo.substituirPosicaoPorLetra($('#campoDaLetra').val());
-            $('#campoDaLetra').val('');
-            $('#mostraPalavra').html(jogo.espacosPalavra);
+            if(jogo.countErros < 6){
+              jogo.substituirPosicaoPorLetra($('#campoDaLetra').val());
+              $('#campoDaLetra').val('');
+              $('#mostraPalavra').html(jogo.espacosPalavra + ' Erros:' + jogo.countErros);
+
+            }
+            else{
+              $('#mostraPalavra').html('Game Over');
+            }
           });
 
 
