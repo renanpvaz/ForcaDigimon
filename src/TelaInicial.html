@@ -15,7 +15,7 @@
   </head>
 
   <body>
-    <h2>Jogo da forca<h2>
+    <h1>Jogo da forca</h1>
       <section>
         <p id="palavra" class="palavraOculta"></p>
         <span id="mostraPalavra"></span>
@@ -23,15 +23,15 @@
       </section>
 
       <div id="menuJogo" class="menu">
-        Nome: <input type="text" id="Nome" placeholder="Digite seu Nome"/>
-        <br>
-        Dificuldade
-        <br>
-        <select id='selectDificuldade'>
+        Nome: <input type="text" id="Nome" class='bordas-arredondadas' placeholder="Digite seu Nome"/>
+        <br><br>
+
+        Dificuldade:
+        <select id='selectDificuldade' class='bordas-arredondadas'>
           <option value="0" >Normal</option>
           <option value="1" >Nunes</option>
         </select>
-        <br>
+        <h2>
             <button id="btJogar">Jogar</button>
       </div>
 
@@ -56,14 +56,12 @@
         <script src="util.js"></script>
         <script src="jogador.js"></script>
         <script type="text/javascript">
-
         //TODO: corrigir ocultação dos menus (onDomReady)
         $('#menuPalpite').hide();
         $('#pontuacao').hide();
         $('#idJogador').hide();
         var jogo;
         var jogador;
-
           atribuirPalavraAleatoria (0);
           $('#btJogar').click(function(){
             var dificuldade = $("#selectDificuldade").val();
@@ -77,7 +75,6 @@
             $('#valorPontuacao').text(placarTotal);
             $('#menuTopFive').hide();
           });
-
           $('#btLetra').click(function(){
             if(jogo.countErros < 6){
               $('#btLetra').html('Chutar Letra');
@@ -85,7 +82,6 @@
               $('#campoDaLetra').val('');
               $('#mostraPalavra').html(jogo.espacosPalavra);
               $('#mostraFrase').html(' Erros:' + jogo.countErros);
-
               if($('#mostraPalavra').html() === jogo.palavra.toLowerCase()){
                 jogo.letrasUsadas = new Array();
                 jogador.armazenaPalavras($('#mostraPalavra').html());
@@ -104,15 +100,12 @@
                 nome: nomeJogador , Dificuldade: dificuldade, pontuacao: jogo.pontuacao
               });
             }
-
             var placarTotal = 'Pontuacao '+ jogo.pontuacao;
             $('#valorPontuacao').text(placarTotal);
           });
-
           $('#btTopFive').click(function(){
             ordenaTopFive();
           })
-
         </script>
 
   </body>
