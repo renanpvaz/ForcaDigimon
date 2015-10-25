@@ -82,7 +82,7 @@
 
               if($('#mostraPalavra').html() === jogo.palavra.toLowerCase()){
                 jogador.armazenaPalavras($('#mostraPalavra').html());
-                atribuirPalavraAleatoria(jogo.dificuldade);
+                jogo.atribuirPalavraAleatoria();
                 $('#mostraPalavra').html(substituirPorUnderline($('#palavra').text()));
                 jogo.palavra = $('#palavra').text();
                 jogo.espacosPalavra = $('#mostraPalavra').html();

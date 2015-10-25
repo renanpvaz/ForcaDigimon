@@ -9,10 +9,15 @@ function Jogador(nomeJogador){
  };
 
  Jogador.prototype.verificarPalavras = function(palavra){
-   if (localStorage.getItem(jogador.nomeJogador)){
-     var palavrasJogador = JSON.parse(localStorage.getItem(jogador.nomeJogador)).palavras;
-     return palavrasJogador.join('').includes(palavra);
-   }
+   palavra = palavra.toLowerCase();
+     return this.palavras.join('').includes(palavra);
+
+     //if (localStorage.getItem(jogador.nomeJogador)){
+       /*
+       var palavrasJogador = JSON.parse(localStorage.getItem(jogador.nomeJogador)).palavras;
+       return palavrasJogador.join('').includes(palavra);
+       */
+
  }
 
  Jogador.prototype.adicionarPalavrasCache = function(){
