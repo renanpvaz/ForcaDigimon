@@ -94,6 +94,8 @@
               if($('#mostraPalavra').html() == jogo.palavra.toLowerCase() + ' Erros:' + jogo.countErros){
                 atribuirPalavraAleatoria(jogo.dificuldade);
                 $('#mostraPalavra').html(substituirPorUnderline($('#palavra').text()));
+                jogo.palavra = $('#palavra').text();
+                jogo.espacosPalavra = $('#mostraPalavra').html();
               }
             }
             else{
