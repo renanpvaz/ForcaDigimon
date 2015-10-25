@@ -41,6 +41,7 @@ Jogo.prototype.substituirPosicaoPorLetra = function(letra){
   var letra = letra.toLowerCase();
 
   if(palavra.includes(letra)){
+    self.pontuacao += 1;
     espacos.forEach(function(elem, index){
       if(palavra[index] == letra)
         espacos.splice(index, 1, letra);
