@@ -82,6 +82,7 @@
 
           $('#btLetra').click(function(){
             if(jogo.countErros < 6){
+              $('#btLetra').html('Chutar Letra');
               jogo.chutarLetra($('#campoDaLetra').val());
               $('#campoDaLetra').val('');
               $('#mostraPalavra').html(jogo.espacosPalavra);
@@ -90,9 +91,9 @@
               if($('#mostraPalavra').html() === jogo.palavra.toLowerCase()){
                 jogador.armazenaPalavras($('#mostraPalavra').html());
                 jogo.atribuirPalavraAleatoria();
-                $('#mostraPalavra').html(substituirPorUnderline($('#palavra').text()));
+                $('#mostraPalavra').html(jogo.espacosPalavra);
                 jogo.palavra = $('#palavra').text();
-                jogo.espacosPalavra = $('#mostraPalavra').html();
+                $('#btLetra').html('Próxima');
               }
             }
             else{
