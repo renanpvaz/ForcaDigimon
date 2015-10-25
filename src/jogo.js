@@ -38,7 +38,7 @@ Jogo.prototype.substituirPosicaoPorLetra = function(letra){
   var espacos = self.espacosPalavra.split('');
   var palavra = self.palavra.toLowerCase();
   var letra = letra.toLowerCase();
-  
+
   if(palavra.includes(letra)){
     espacos.forEach(function(elem, index){
       if(palavra[index] == letra)
@@ -55,6 +55,6 @@ function atribuirPalavraAleatoria (dificuldade){
     buscarPalavra(dificuldade).done(
       function(response){
       var palavra = response[Math.floor(Math.random() * (4 - 0 + 1)) + 0];
-    $("#palavra").text(palavra);
+      $("#palavra").text(palavra);
      });
 };

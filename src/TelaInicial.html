@@ -75,7 +75,9 @@
           });
 
           $('#btLetra').click(function(){
-            
+            jogo.substituirPosicaoPorLetra($('#campoDaLetra').val());
+            $('#campoDaLetra').val('');
+            $('#mostraPalavra').html(jogo.espacosPalavra);
           });
 
 
