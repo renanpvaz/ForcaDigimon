@@ -7,6 +7,7 @@ function Jogo(jogador, dificuldade){
   this.dificuldade = dificuldade;
   this.pontuacao = 0;
   this.jogador = jogador;
+  this.id = 0;
   $('#mostraFrase').text(this.espacosPalavra);
 }
 
@@ -73,7 +74,7 @@ function atribuirPalavraAleatoria (dificuldade){
 
 function ordenaTopFive(){
   var pontuacao = 'pontuacao';
-  buscaTopFive().done(
+  buscaJogadores().done(
     function(response){
       ordenaProAtributo(response,pontuacao)
       })
@@ -88,4 +89,12 @@ function ordenaProAtributo(response,pontuacao){
       $('#showTopFive').append(listaPontuacao);
       $('#showTopFive').append('<br>');
     }
-}
+};
+
+function buscaIdJogador(jogador){
+  buscaJogadores().done(
+    function(response){
+      var idJogador = response[response.length -1].id;
+      jogador.id = idJogador;
+    })
+};

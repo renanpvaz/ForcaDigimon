@@ -10,6 +10,7 @@
     <script type="text/javascript">
     $('#menuPalpite').hide();
     $('#pontuacao').hide();
+    $('#idJogador').hide();
     </script>
   </head>
 
@@ -48,6 +49,8 @@
         <div id="showTopFive"></div>
       </div>
 
+      <div id="idJogador">
+      </div>
 
         <script src="jogo.js"></script>
         <script src="util.js"></script>
@@ -57,13 +60,12 @@
         //TODO: corrigir ocultação dos menus (onDomReady)
         $('#menuPalpite').hide();
         $('#pontuacao').hide();
-
+        $('#idJogador').hide();
         var jogo;
         var jogador;
 
           atribuirPalavraAleatoria (0);
           $('#btJogar').click(function(){
-            var urlUsuarios = 'http://localhost:3000/2';
             var dificuldade = $("#selectDificuldade").val();
             var nomeJogador = $('#Nome').val();
             jogador = new Jogador(nomeJogador);
@@ -75,9 +77,8 @@
             $('#valorPontuacao').text(placarTotal);
             $('#menuTopFive').hide();
             //console.log(jogo);
-            $.post(urlUsuarios,{
-              nome: nomeJogador , Dificuldade: dificuldade, pontuacao: 0
-            });
+
+            buscaIdJogador(jogador);
           });
 
           $('#btLetra').click(function(){
@@ -97,6 +98,13 @@
             }
             else{
               $('#mostraPalavra').html('Game Over');
+              var urlJogadores = 'http://localhost:3000/2';
+              var dificuldade = $("#selectDificuldade").val();
+              var nomeJogador = $('#Nome').val();
+              
+              $.post(urlJogadores,{
+                nome: nomeJogador , Dificuldade: dificuldade, pontuacao: jogo.pontuacao
+              });
             }
 
             var placarTotal = 'Pontuacao '+ jogo.pontuacao;
