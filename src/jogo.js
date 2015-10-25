@@ -59,3 +59,21 @@ function atribuirPalavraAleatoria (dificuldade){
     $("#palavra").text(palavra);
      });
 };
+
+function ordenaTopFive(){
+  var pontuacao = 'pontuacao';
+  buscaTopFive().done(
+    function(response){
+      ordenaProAtributo(response,pontuacao)
+      })
+    };
+
+function ordenaProAtributo(response,pontuacao){
+    var topFive = response.sort(function(valorA,valorB){
+    return valorA[pontuacao] < valorB[pontuacao];
+  });
+    for(var i = 0; i < 5;i++){
+      $('#showTopFive').append(topFive[i].pontuacao);
+      console.log(topFive[i].pontuacao);
+    }
+}

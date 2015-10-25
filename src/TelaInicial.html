@@ -38,6 +38,11 @@
         <h3 id="valorPontuacao">Pontuacao:</h3>
       </div>
 
+      <div id="menuTopFive">
+        <button id="btTopFive">TOP 5</button>
+        <div id="showTopFive"></div>
+      </div>
+
         <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
         <script src="jogo.js"></script>
         <script src="util.js"></script>
@@ -62,14 +67,11 @@
             $('#pontuacao').show();
             var placarTotal = 'Pontuacao '+ jogo.pontuacao
             $('#valorPontuacao').text(placarTotal);
+            $('#menuTopFive').hide();
             //console.log(jogo);
-            /*
             $.post(urlUsuarios,{
               nome: nomeJogador , Dificuldade: dificuldade, pontuacao: 0
-            }).done(function() {
-              alert('done');
             });
-            */
           });
 
           $('#btLetra').click(function(){
@@ -94,6 +96,10 @@
             var placarTotal = 'Pontuacao '+ jogo.pontuacao;
             $('#valorPontuacao').text(placarTotal);
           });
+
+          $('#btTopFive').click(function(){
+            ordenaTopFive();
+          })
 
         </script>
 
