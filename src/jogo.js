@@ -1,5 +1,7 @@
 function Jogo(nomeJogador, dificuldade){
-  this.palavra = '';
+  atribuirPalavraAleatoria (dificuldade);
+  this.palavra = document.getElementById("palavra").innerHTML;
+  console.log(this.palavra);
   this.espacosPalavra = substituirPorUnderline(this.palavra);
   //console.log(espacosPalavra);
   this.countErros = 0;
@@ -18,7 +20,7 @@ Jogo.prototype.incrementarErros = function(){
 Jogo.prototype.pegarPalavra = function(){
   pegarPalavraAleatoria(this.dificuldade, this)
 }
-
+/*
 Jogo.prototype.atribuirPalavraAleatoria = function(){
   var self = this;
     buscarPalavra(self.dificuldade).done(
@@ -30,3 +32,12 @@ Jogo.prototype.atribuirPalavraAleatoria = function(){
           self.espacosPalavra = jogo.palavra.substituirPorUnderline()
         });
 }
+*/
+function atribuirPalavraAleatoria (dificuldade){
+    buscarPalavra(dificuldade).done(
+      function(response){
+      var palavra = response[Math.floor(Math.random() * (4 - 0 + 1)) + 0];
+      document.getElementById("palavra").style.visibility = "hidden";
+        document.getElementById("palavra").innerHTML = palavra;
+     });
+};

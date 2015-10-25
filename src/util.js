@@ -15,7 +15,7 @@ Array.prototype.substituirPosicaoPorLetra = function(palavra, letra){
   if(palavra.includes(letra)){
     self.forEach(function(elem){
       self.splice(palavra.indexOf(letra), 1, letra);
-      palavra = palavra.replace(letra, '_');
+      palavra = palavra.replace(letra, ' _ ');
       });
       return self;
     }
@@ -28,8 +28,12 @@ function pegaNumeroAleatorio(min, max){
 function buscarPalavra(dificuldade){
   var urlBusca = 'http://localhost:3000/' + dificuldade;
 
-  return $.ajax({
+ return $.ajax({
     url: urlBusca,
-    type: 'GET'
+    type: 'GET',
+    //async: false,
+    complete: function(data){
+      result = data;
+    }
   });
 }
