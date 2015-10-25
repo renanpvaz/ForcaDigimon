@@ -36,3 +36,15 @@ function buscaJogadores(){
     }
   });
 };
+
+function buscaTopFive(){
+  var urlBusca = 'http://localhost:3000/2'
+
+  return $.ajax({
+    url: urlBusca,
+    type: 'GET',
+    complete: function(data){
+      result = data
+    }
+  });
+}
