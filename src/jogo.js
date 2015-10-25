@@ -73,7 +73,8 @@ function ordenaProAtributo(response,pontuacao){
     return valorA[pontuacao] < valorB[pontuacao];
   });
     for(var i = 0; i < 5;i++){
-      $('#showTopFive').append(topFive[i].pontuacao);
-      console.log(topFive[i].pontuacao);
+      var listaPontuacao = 'Nome:' + topFive[i].nome+' Pontuação:'+ topFive[i].pontuacao;
+      $('#showTopFive').append(listaPontuacao);
+      $('#showTopFive').append('<br>');
     }
 }
