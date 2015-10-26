@@ -1,17 +1,72 @@
 [
   [
-    "Onomatopéia",
-    "Urso Panda",
-    "Bulbasaur",
-    "Girassol",
-    "Caracol"
-  ],
-  [
-    "Polimorfismo",
-    "Parnasianismo",
-    "Paralelepípedo",
-    "Esquelético",
-    "Oftalmotorrinolaringologista"
+    {
+      "palavras": [
+        "Bowser",
+        "Mario",
+        "Luigi",
+        "Princes Peach",
+        "Yoshi",
+        "Koopa troop",
+        "Toad",
+        "Princes Daisy",
+        "Waluigi",
+        "Wario",
+        "Pauline",
+        "Donkey Kong",
+        "Birdo"
+      ],
+      "categoria": "Mario Series"
+    },
+    {
+      "palavras": [
+        "Sonic",
+        "Tails",
+        "Knuckles",
+        "Eggman",
+        "Amy Rose",
+        "Sonia"
+      ],
+      "categoria": "Sonic The Hedgehog Series"
+    },
+    {
+      "palavras": [
+        "Link",
+        "Ganondorf",
+        "Princes Zelda",
+        "Dark Link",
+        "Twinrova",
+        "Majora",
+        "Epona",
+        "King Dodongo",
+        "Kaepora Gaebora",
+        "Navi"
+      ],
+      "categoria": "The Legend of Zelda Series"
+    },
+    {
+      "palavras": [
+        "Megaman",
+        "Zero",
+        "Sigma",
+        "Dr Wily",
+        "Gutsman"
+      ],
+      "categoria": "Megaman Series"
+    },
+    {
+      "palavras": [
+        "Red",
+        "Blue",
+        "Professor Oak",
+        "Brock",
+        "Misty",
+        "Giovanni",
+        "Steven Stone",
+        "Wally"
+      ],
+      "categoria": "Pokémon Series"
+    }
   ],
   []
 ]
