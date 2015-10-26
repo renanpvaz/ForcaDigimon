@@ -24,7 +24,7 @@
   </head>
 
   <body>
-    
+
     <div class="placar" id="pontuacao">
       <h3 id="valorPontuacao">Pontuacao:</h3>
     </div>
@@ -79,8 +79,9 @@
         $('#menuVoltar').hide();
         var jogo;
         var jogador;
-          atribuirPalavraAleatoria (0);
+          atribuirPalavraAleatoria ($("#selectDificuldade").val());
           $('#btJogar').click(function(){
+            musicaBtJogar();
             var dificuldade = $("#selectDificuldade").val();
             var nomeJogador = $('#Nome').val();
             if(nomeJogador === ''){

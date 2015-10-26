@@ -48,3 +48,8 @@ function buscaTopFive(){
     }
   });
 }
+
+function musicaBtJogar(){
+  myAudio = new Audio('sons/Redee.wav');
+  myAudio.play();
+}
