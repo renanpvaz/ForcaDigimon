@@ -11,11 +11,12 @@
     $('#menuPalpite').hide();
     $('#pontuacao').hide();
     $('#idJogador').hide();
+    $('#menuVoltar').hide();
     </script>
   </head>
 
   <body>
-    <h1>Jogo da forca</h1>
+    <h2>Jogo da forca<h2>
       <section>
         <p id="palavra" class="palavraOculta"></p>
         <span id="mostraPalavra"></span>
@@ -23,15 +24,15 @@
       </section>
 
       <div id="menuJogo" class="menu">
-        Nome: <input type="text" id="Nome" class='bordas-arredondadas' placeholder="Digite seu Nome"/>
-        <br><br>
-
-        Dificuldade:
-        <select id='selectDificuldade' class='bordas-arredondadas'>
+        Nome: <input type="text" id="Nome" placeholder="Digite seu Nome"/>
+        <br>
+        Dificuldade
+        <br>
+        <select id='selectDificuldade'>
           <option value="0" >Normal</option>
           <option value="1" >Nunes</option>
         </select>
-        <h2>
+        <br>
             <button id="btJogar">Jogar</button>
       </div>
 
@@ -49,6 +50,10 @@
         <div id="showTopFive"></div>
       </div>
 
+      <div id="menuVoltar">
+        <button id="btVoltar">voltar</button>
+      </div>
+
       <div id="idJogador">
       </div>
 
@@ -56,12 +61,14 @@
         <script src="util.js"></script>
         <script src="jogador.js"></script>
         <script type="text/javascript">
-        //TODO: corrigir ocultação dos menus (onDomReady)
+
         $('#menuPalpite').hide();
         $('#pontuacao').hide();
         $('#idJogador').hide();
+        $('#menuVoltar').hide();
         var jogo;
         var jogador;
+
           atribuirPalavraAleatoria (0);
           $('#btJogar').click(function(){
             var dificuldade = $("#selectDificuldade").val();
@@ -71,10 +78,15 @@
             $('#menuJogo').hide();
             $('#menuPalpite').show();
             $('#pontuacao').show();
+            $('#mostraFrase').show();
+            $('#mostraPalavra').show();
+            $('#campoDaLetra').show();
+            $('#btLetra').show();
             var placarTotal = 'Pontuacao '+ jogo.pontuacao
             $('#valorPontuacao').text(placarTotal);
             $('#menuTopFive').hide();
           });
+
           $('#btLetra').click(function(){
             if(jogo.countErros < 6){
               $('#btLetra').html('Chutar Letra');
@@ -82,6 +94,7 @@
               $('#campoDaLetra').val('');
               $('#mostraPalavra').html(jogo.espacosPalavra);
               $('#mostraFrase').html(' Erros:' + jogo.countErros);
+
               if($('#mostraPalavra').html() === jogo.palavra.toLowerCase()){
                 jogo.letrasUsadas = new Array();
                 jogador.armazenaPalavras($('#mostraPalavra').html());
@@ -99,13 +112,33 @@
               $.post(urlJogadores,{
                 nome: nomeJogador , Dificuldade: dificuldade, pontuacao: jogo.pontuacao
               });
+
+              $('#menuVoltar').show();
+
             }
+
             var placarTotal = 'Pontuacao '+ jogo.pontuacao;
             $('#valorPontuacao').text(placarTotal);
           });
+
           $('#btTopFive').click(function(){
             ordenaTopFive();
           })
+
+          $('#btVoltar').click(function(){
+            $('#pontuacao').hide();
+            $('#menuVoltar').hide();
+            $('#mostraPalavra').hide();
+            $('#campoDaLetra').hide();
+            $('#btLetra').hide();
+            $('#mostraFrase').hide();
+            $('#mostraPalavra').html('');
+            $('#campoDaLetra').html('');
+            $('#Nome').html('');
+            $('#menuJogo').show();
+
+          })
+
         </script>
 
   </body>

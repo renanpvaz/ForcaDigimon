@@ -1,6 +1,6 @@
 function substituirPorUnderline(palavra){
-  var teste = palavra.replace(/[^\s-]/g, '_').split('').join('');
-  return teste;
+  var palavraPronta = palavra.replace(/[^\s-]/g, '_').split('').join('');
+  return palavraPronta;
 }
 
 String.prototype.substituirPorUnderline = function(){

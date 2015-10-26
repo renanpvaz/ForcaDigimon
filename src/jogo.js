@@ -11,8 +11,6 @@ function Jogo(jogador, dificuldade){
   $('#mostraFrase').text(this.espacosPalavra);
 }
 
-//var jogo = new Jogo($('#Nome').val(), 0 || 1 )
-
 Jogo.prototype.incrementarErros = function(){
   this.erros += 1;
 }
