@@ -32,7 +32,6 @@
       <section>
         <p id="palavra" class="palavraOculta"></p>
         <span id="mostraPalavra"></span>
-        <p id="mostraFrase" class="mostraPalavra"></p>
       </section>
 
       <div id="menuJogo" class="menu">
@@ -101,8 +100,7 @@
               $('#menuJogo').hide();
               $('#menuPalpite').show();
               $('#pontuacao').show();
-              $('#mostraFrase').show();
-              $('#mostraPalavra').show();
+              $('#mostraPalavra').html(jogo.espacosPalavra).show();
               $('#campoDaLetra').show();
               $('#btLetra').show();
               $('#mostraErros').show();
@@ -151,7 +149,6 @@
             $('#campoDaLetra').hide();
             $('#btLetra').hide();
             $('#erroNome').hide();
-            $('#mostraFrase').hide();
             $('#mostraPalavra').html('');
             $('#campoDaLetra').html('');
             $('#Nome').html('');
