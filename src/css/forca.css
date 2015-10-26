@@ -16,11 +16,13 @@ body{
 #mostraPalavra{
   font-family: 'Roboto Slab';
   font-size: 50px;
+  margin-bottom: auto;
 }
 
 #mostraFrase{
   font-family: 'Roboto Slab';
   font-size: 50px;
+  margin-top: 200px;
 }
 
 h1 {
@@ -67,11 +69,6 @@ h1 {
 }
 
 #pontuacao{
-  margin-top: -130px;
   position:absolute;
-}
-
-span{
-
-
+  margin:0px;
 }
