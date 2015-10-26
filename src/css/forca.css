@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
+
+
 body{
   position: absolute;
   text-align: center;
@@ -7,8 +10,12 @@ body{
 }
 
 
-#palavraOculta{
-  font-family: "Lucida Console";
+#mostraPalavra{
+  font-family: 'Roboto Slab';
+}
+
+#mostraFrase{
+  font-family: 'Roboto Slab';
 }
 
 h1 {
@@ -56,4 +63,14 @@ h1 {
   height: 50px;
   color:white;
   background:#FF7F50;
+}
+
+#pontuacao{
+  margin-top: -130px;
+  position:absolute;
+}
+
+span{
+
+
 }
