@@ -43,7 +43,7 @@ Jogo.prototype.chutarLetra = function(letra){
   if(letra === ''){
 
   }
-  else if(verificaLetra === 0){
+  else if(verificaLetra !== -1){
 
   }
   else{
