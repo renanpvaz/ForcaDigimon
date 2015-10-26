@@ -18,7 +18,7 @@
     </script>
   </head>
 
-  <body onload="musicaMenuPrincipal(true)">
+  <body onload="sortearMusica()">
 
     <div class="placar" id="pontuacao">
       <h3 id="valorPontuacao">Pontuacao:</h3>
@@ -63,7 +63,8 @@
       </div>
 
       <footer>
-        <button id="stopSond">Parar música</button>
+        <button id="stopSound">Parar música</button>
+        <button id="alterarMusica">Alterar Música</button>
       </footer>
 
 
@@ -148,12 +149,13 @@
             $('#menuJogo').show();
             $('#menuTopFive').show();
           })
-           $('#stopSond').click(function(){
+           $('#stopSound').click(function(){
              musicaMenuPrincipal(false);
            })
 
-
-           //musicaMenuPrincipal(true);
+           $('#alterarMusica').click(function(){
+             sortearMusica();
+           })
         </script>
 
   </body>
