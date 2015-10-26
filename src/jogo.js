@@ -93,7 +93,7 @@ function atribuirPalavraAleatoria (dificuldade){
 
 function ordenaTopFive(){
   var pontuacao = 'pontuacao';
-  buscaTopFive().done(
+  buscaJogadores().done(
     function(response){
       ordenaProAtributo(response,pontuacao)
       })
