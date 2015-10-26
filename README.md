@@ -2,7 +2,7 @@
 
 ## Instruções
 
-1. Execute: 
+1. **Execute:** 
 
   ```
   $ npm install 
@@ -12,4 +12,4 @@
   $ json-server db.json —watch
   ```
 
-2. Abra o arquivo index.html
+2. **Abra o arquivo index.html**
