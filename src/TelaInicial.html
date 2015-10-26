@@ -21,7 +21,11 @@
   <body onload="musicaMenuPrincipal(true,'sons/MarioMainTheme.mp3')">
 
     <div class="placar" id="pontuacao">
-      <h3 id="valorPontuacao">Pontuacao:</h3>
+      <h3 id="valorPontuacao">Pontuação: </h3>
+    </div>
+
+    <div class="placar" id="mostraErros">
+      <h3 id="valorErros">Erros: </h3>
     </div>
 
     <h1>Jogo da forca</h1>
@@ -40,7 +44,7 @@
           <option value="0" >Normal</option>
           <option value="1" >Nunes</option>
         </select>
-        <h2>
+        <h3>
             <button id="btJogar">Jogar</button>
       </div>
 
@@ -48,10 +52,12 @@
       <div id="menuPalpite" class="palpite">
         <input id="campoDaLetra" type="text" placeholder="Digite uma letra!" size=1 maxlength=1>
         <button id="btLetra">Chutar Letra</button>
+        <h3>
       </div>
 
       <div id="menuTopFive">
         <button id="btTopFive">TOP 5</button>
+        <h3>
         <div id="showTopFive"></div>
       </div>
 
@@ -76,6 +82,7 @@
         $('#pontuacao').hide();
         $('#idJogador').hide();
         $('#menuVoltar').hide();
+        $('#mostraErros').hide();
         var jogo;
         var jogador;
         var nMusica = 2;
@@ -98,7 +105,8 @@
               $('#mostraPalavra').show();
               $('#campoDaLetra').show();
               $('#btLetra').show();
-              var placarTotal = 'Pontuacao '+ jogo.pontuacao
+              $('#mostraErros').show();
+              var placarTotal = 'Pontuação: '+ jogo.pontuacao
               $('#valorPontuacao').text(placarTotal);
               $('#menuTopFive').hide();
           }
@@ -109,7 +117,8 @@
               jogo.chutarLetra($('#campoDaLetra').val());
               $('#campoDaLetra').val('');
               $('#mostraPalavra').html(jogo.espacosPalavra);
-              $('#mostraFrase').html(' Erros:' + jogo.countErros);
+              var valorErros = 'Erros: ' + jogo.countErros;
+              $('#valorErros').text(valorErros);
               if($('#mostraPalavra').html() === jogo.palavra.toLowerCase()){
                 jogo.letrasUsadas = new Array();
                 jogador.armazenaPalavras($('#mostraPalavra').html());
@@ -129,7 +138,7 @@
               });
               $('#menuVoltar').show();
             }
-            var placarTotal = 'Pontuacao '+ jogo.pontuacao;
+            var placarTotal = 'Pontuação: '+ jogo.pontuacao;
             $('#valorPontuacao').text(placarTotal);
           });
           $('#btTopFive').click(function(){
