@@ -2,10 +2,14 @@
 
 ## Instruções
 
-Execute: 
+1. Execute: 
 
-$ npm install
-$ cd local do arquivo db.json
-$ json-server db.json —watch
+  ```
+  $ npm install 
+  
+  $ cd (local do arquivo) db.json
+  
+  $ json-server db.json —watch
+  ```
 
-E então abra index.html
+2. Abra o arquivo index.html
