@@ -37,18 +37,6 @@ function buscaJogadores(){
   });
 };
 
-function buscaTopFive(){
-  var urlBusca = 'http://localhost:3000/1'
-
-  return $.ajax({
-    url: urlBusca,
-    type: 'GET',
-    complete: function(data){
-      result = data
-    }
-  });
-}
-
 function musicaBtJogar(){
   myAudio = new Audio('sons/Redee.wav');
   myAudio.play();
