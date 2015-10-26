@@ -16,7 +16,7 @@
   </head>
 
   <body>
-    <h2>Jogo da forca<h2>
+    <h1>Jogo da forca</h1>
       <section>
         <p id="palavra" class="palavraOculta"></p>
         <span id="mostraPalavra"></span>
@@ -24,17 +24,17 @@
       </section>
 
       <div id="menuJogo" class="menu">
-        Nome: <input type="text" id="Nome" placeholder="Digite seu Nome"/>
-        <br>
-        Dificuldade
-        <br>
-        <select id='selectDificuldade'>
+        Nome: <input type="text" id="Nome" placeholder="Digite seu Nome" class='bordas-arredondadas'/>
+        <br><br>
+        Dificuldade:
+        <select id='selectDificuldade' class='bordas-arredondadas'>
           <option value="0" >Normal</option>
           <option value="1" >Nunes</option>
         </select>
-        <br>
+        <h2>
             <button id="btJogar">Jogar</button>
       </div>
+
 
       <div id="menuPalpite" class="palpite">
         <input id="campoDaLetra" type="text" placeholder="Digite uma letra!" size=1 maxlength=1>
