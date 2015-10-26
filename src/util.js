@@ -26,7 +26,7 @@ function buscarPalavra(dificuldade){
 }
 
 function buscaJogadores(){
-  var urlBusca = 'http://localhost:3000/2';
+  var urlBusca = 'http://localhost:3000/1';
 
   return $.ajax({
     url: urlBusca,
@@ -38,7 +38,7 @@ function buscaJogadores(){
 };
 
 function buscaTopFive(){
-  var urlBusca = 'http://localhost:3000/2'
+  var urlBusca = 'http://localhost:3000/1'
 
   return $.ajax({
     url: urlBusca,
