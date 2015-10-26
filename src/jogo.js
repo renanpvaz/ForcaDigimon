@@ -41,23 +41,28 @@ Jogo.prototype.atribuirPalavraAleatoria = function(){
 }
 
 Jogo.prototype.chutarLetra = function(letra){
-  var self = this;
-  var espacos = self.espacosPalavra.split('');
-  var palavra = self.palavra.toLowerCase();
-  var letra = letra.toLowerCase();
+  if(letra === ''){
 
-  self.letrasUsadas.push(letra);
+  }
+  else{
+      var self = this;
+      var espacos = self.espacosPalavra.split('');
+      var palavra = self.palavra.toLowerCase();
+      var letra = letra.toLowerCase();
 
-  if(palavra.includes(letra)){
-    self.pontuacao += 1;
-    espacos.forEach(function(elem, index){
-      if(palavra[index] == letra)
-        espacos.splice(index, 1, letra);
-      });
-      self.espacosPalavra = espacos.join('');
-      return self;
-    }else{
-      self.countErros += 1;
+      self.letrasUsadas.push(letra);
+
+      if(palavra.includes(letra)){
+        self.pontuacao += 1;
+        espacos.forEach(function(elem, index){
+          if(palavra[index] == letra)
+            espacos.splice(index, 1, letra);
+          });
+          self.espacosPalavra = espacos.join('');
+          return self;
+        }else{
+          self.countErros += 1;
+        }
     }
   }
 
