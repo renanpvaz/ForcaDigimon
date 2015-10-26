@@ -97,8 +97,14 @@ function ordenaProAtributo(response,pontuacao){
   });
     $('#showTopFive').html('');
     for(var i = 0; i < 5;i++){
-      var listaPontuacao = 'Nome:' + topFive[i].nome+' Pontuação:'+ topFive[i].pontuacao;
-      $('#showTopFive').append(listaPontuacao);
-      $('#showTopFive').append('<br>');
+      if(!topFive.length){
+        $('#showTopFive').append('Ainda não temos pontuações!');
+        break;
+      }
+      else{
+        var listaPontuacao = 'Nome:' + topFive[i].nome+' Pontuação:'+ topFive[i].pontuacao;
+        $('#showTopFive').append(listaPontuacao);
+        $('#showTopFive').append('<br>');
     }
+  }
 }
