@@ -24,6 +24,7 @@
       </section>
 
       <div id="menuJogo" class="menu">
+        <div id="erroNome"></div>
         Nome: <input type="text" id="Nome" placeholder="Digite seu Nome" class='bordas-arredondadas'/>
         <br><br>
         Dificuldade:
@@ -57,6 +58,8 @@
       <div id="idJogador">
       </div>
 
+
+
         <script src="jogo.js"></script>
         <script src="util.js"></script>
         <script src="jogador.js"></script>
@@ -73,18 +76,24 @@
           $('#btJogar').click(function(){
             var dificuldade = $("#selectDificuldade").val();
             var nomeJogador = $('#Nome').val();
-            jogador = new Jogador(nomeJogador);
-            jogo = new Jogo(jogador, dificuldade);
-            $('#menuJogo').hide();
-            $('#menuPalpite').show();
-            $('#pontuacao').show();
-            $('#mostraFrase').show();
-            $('#mostraPalavra').show();
-            $('#campoDaLetra').show();
-            $('#btLetra').show();
-            var placarTotal = 'Pontuacao '+ jogo.pontuacao
-            $('#valorPontuacao').text(placarTotal);
-            $('#menuTopFive').hide();
+            if(nomeJogador === ''){
+              $('#erroNome').show();
+              $('#erroNome').html('preencha seu Nome!');
+            }
+            else{
+              jogador = new Jogador(nomeJogador);
+              jogo = new Jogo(jogador, dificuldade);
+              $('#menuJogo').hide();
+              $('#menuPalpite').show();
+              $('#pontuacao').show();
+              $('#mostraFrase').show();
+              $('#mostraPalavra').show();
+              $('#campoDaLetra').show();
+              $('#btLetra').show();
+              var placarTotal = 'Pontuacao '+ jogo.pontuacao
+              $('#valorPontuacao').text(placarTotal);
+              $('#menuTopFive').hide();
+          }
           });
 
           $('#btLetra').click(function(){
@@ -131,10 +140,12 @@
             $('#mostraPalavra').hide();
             $('#campoDaLetra').hide();
             $('#btLetra').hide();
+            $('#erroNome').hide();
             $('#mostraFrase').hide();
             $('#mostraPalavra').html('');
             $('#campoDaLetra').html('');
             $('#Nome').html('');
+            $('#erroNome').html('');
             $('#menuJogo').show();
 
           })
