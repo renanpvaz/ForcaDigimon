@@ -18,7 +18,7 @@
     </script>
   </head>
 
-  <body onload="sortearMusica()">
+  <body onload="musicaMenuPrincipal(true,'sons/MarioMainTheme.mp3')">
 
     <div class="placar" id="pontuacao">
       <h3 id="valorPontuacao">Pontuacao:</h3>
@@ -78,6 +78,7 @@
         $('#menuVoltar').hide();
         var jogo;
         var jogador;
+        var nMusica = 2;
           atribuirPalavraAleatoria($("#selectDificuldade").val());
           $('#btJogar').click(function(){
             musicaBtJogar();
@@ -154,7 +155,12 @@
            })
 
            $('#alterarMusica').click(function(){
-             sortearMusica();
+             sortearMusica(nMusica);
+             console.log(nMusica);
+             nMusica++;
+             if(nMusica > 2){
+               nMusica = 0;
+             }
            })
         </script>
 

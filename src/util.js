@@ -61,18 +61,21 @@ function musicaMenuPrincipal(bool,musica){
         this.currentTime = 0;
         this.play();
         }, false);
-      myAudio.pause();
-      myAudio.play();
+        myAudio.play();
     }
     else {
-      myAudio.pause();
-      myAudio.currentTime = 0;
+      paraMusica();
     }
 }
 
-function sortearMusica(){
-  var musicas = ['sons/StageSelect.mp3','sons/MarioMainTheme.mp3'];
-  var numeroMusica = pegaNumeroAleatorio(0, 1);
-  var musicaQueVaiSerTocada = musicas[numeroMusica];
+function sortearMusica(nMusica){
+  var musicas = ['sons/StageSelect.mp3','sons/MarioMainTheme.mp3','sons/Opening.mp3'];
+  var musicaQueVaiSerTocada = musicas[nMusica];
+  paraMusica();
   musicaMenuPrincipal(true,musicaQueVaiSerTocada);
+}
+
+function paraMusica(){
+  myAudio.pause();
+  myAudio.currentTime = 0;
 }
