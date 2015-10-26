@@ -53,3 +53,19 @@ function musicaBtJogar(){
   myAudio = new Audio('sons/Redee.wav');
   myAudio.play();
 }
+
+function musicaMenuPrincipal(bool){
+    if(bool){
+      myAudio = new Audio('sons/StageSelect.mp3');
+      myAudio.addEventListener('ended', function() {
+        this.currentTime = 0;
+        this.play();
+        }, false);
+      myAudio.play();
+    }
+    else {
+      myAudio.pause();
+      myAudio.currentTime = 0;
+    }
+
+}

@@ -13,17 +13,12 @@
     $('#idJogador').hide();
     $('#menuVoltar').hide();
 
-    myAudio = new Audio('sons/StageSelect.mp3');
-    myAudio.addEventListener('ended', function() {
-      this.currentTime = 0;
-      this.play();
-      }, false);
-      myAudio.play();
+
 
     </script>
   </head>
 
-  <body>
+  <body onload="musicaMenuPrincipal(true)">
 
     <div class="placar" id="pontuacao">
       <h3 id="valorPontuacao">Pontuacao:</h3>
@@ -67,6 +62,9 @@
       <div id="idJogador">
       </div>
 
+      <footer>
+        <button id="stopSond">Parar música</button>
+      </footer>
 
 
         <script src="jogo.js"></script>
@@ -150,6 +148,12 @@
             $('#menuJogo').show();
             $('#menuTopFive').show();
           })
+           $('#stopSond').click(function(){
+             musicaMenuPrincipal(false);
+           })
+
+
+           //musicaMenuPrincipal(true);
         </script>
 
   </body>
