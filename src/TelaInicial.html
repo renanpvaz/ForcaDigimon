@@ -24,6 +24,11 @@
   </head>
 
   <body>
+    
+    <div class="placar" id="pontuacao">
+      <h3 id="valorPontuacao">Pontuacao:</h3>
+    </div>
+
     <h1>Jogo da forca</h1>
       <section>
         <p id="palavra" class="palavraOculta"></p>
@@ -50,10 +55,6 @@
         <button id="btLetra">Chutar Letra</button>
       </div>
 
-      <div class="placar" id="pontuacao">
-        <h3 id="valorPontuacao">Pontuacao:</h3>
-      </div>
-
       <div id="menuTopFive">
         <button id="btTopFive">TOP 5</button>
         <div id="showTopFive"></div>
@@ -72,14 +73,12 @@
         <script src="util.js"></script>
         <script src="jogador.js"></script>
         <script type="text/javascript">
-
         $('#menuPalpite').hide();
         $('#pontuacao').hide();
         $('#idJogador').hide();
         $('#menuVoltar').hide();
         var jogo;
         var jogador;
-
           atribuirPalavraAleatoria (0);
           $('#btJogar').click(function(){
             var dificuldade = $("#selectDificuldade").val();
@@ -103,7 +102,6 @@
               $('#menuTopFive').hide();
           }
           });
-
           $('#btLetra').click(function(){
             if(jogo.countErros < 5){
               $('#btLetra').html('Chutar Letra');
@@ -111,7 +109,6 @@
               $('#campoDaLetra').val('');
               $('#mostraPalavra').html(jogo.espacosPalavra);
               $('#mostraFrase').html(' Erros:' + jogo.countErros);
-
               if($('#mostraPalavra').html() === jogo.palavra.toLowerCase()){
                 jogo.letrasUsadas = new Array();
                 jogador.armazenaPalavras($('#mostraPalavra').html());
@@ -129,19 +126,14 @@
               $.post(urlJogadores,{
                 nome: nomeJogador , Dificuldade: dificuldade, pontuacao: jogo.pontuacao
               });
-
               $('#menuVoltar').show();
-
             }
-
             var placarTotal = 'Pontuacao '+ jogo.pontuacao;
             $('#valorPontuacao').text(placarTotal);
           });
-
           $('#btTopFive').click(function(){
             ordenaTopFive();
           })
-
           $('#btVoltar').click(function(){
             $('#pontuacao').hide();
             $('#menuVoltar').hide();
@@ -157,7 +149,6 @@
             $('#menuJogo').show();
             $('#menuTopFive').show();
           })
-
         </script>
 
   </body>
