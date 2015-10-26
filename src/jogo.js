@@ -22,13 +22,15 @@ Jogo.prototype.pegarPalavra = function(){
 Jogo.prototype.atribuirPalavraAleatoria = function(){
   var self = this;
   var palavraResposta;
-  var index = Math.floor(Math.random() * (5));
 
     buscarPalavra(self.dificuldade).done(
       function(response){
-        palavraResposta = response[index].toLowerCase();
+
+        var categoria = response[Math.floor(Math.random() * (5))];
+        var palavraResposta = categoria.palavras[Math.floor(Math.random() * (categoria.palavras.length - 1))];
+
         while(self.jogador.verificarPalavras(palavraResposta)){
-          palavraResposta = response[Math.floor(Math.random() * (5))];
+          palavraResposta = categoria.palavras[Math.floor(Math.random() * (categoria.palavras.length - 1))];
         };
         self.palavra = palavraResposta;
       })
@@ -80,7 +82,8 @@ Jogo.prototype.chutarPalavra = function(palavra){
 function atribuirPalavraAleatoria (dificuldade){
     buscarPalavra(dificuldade).done(
       function(response){
-      var palavra = response[Math.floor(Math.random() * (5))];
+      var categoria = response[Math.floor(Math.random() * (5))];
+      var palavra = categoria.palavras[Math.floor(Math.random() * (categoria.palavras.length - 1))];
 
          $("#palavra").text(palavra);
 
