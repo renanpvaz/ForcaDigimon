@@ -18,7 +18,7 @@
     </script>
   </head>
 
-  <body onload="musicaMenuPrincipal(true,'sons/MarioMainTheme.mp3')">
+  <body onload="musicaMenuPrincipal(true)">
 
     <div class="placar" id="pontuacao">
       <h3 id="valorPontuacao">Pontuação: </h3>
@@ -110,7 +110,7 @@
           }
           });
           $('#btLetra').click(function(){
-            if(jogo.countErros < 5){
+            if(jogo.countErros < 6){
               $('#btLetra').html('Chutar Letra');
               jogo.chutarLetra($('#campoDaLetra').val());
               $('#campoDaLetra').val('');

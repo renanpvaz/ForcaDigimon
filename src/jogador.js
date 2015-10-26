@@ -10,8 +10,9 @@ function Jogador(nomeJogador){
 
  Jogador.prototype.verificarPalavras = function(palavra){
    palavra = palavra.toLowerCase();
+   if(jogador.nomeJogador,JSON.stringify(jogador)){
      return this.palavras.join('').includes(palavra);
-
+   }
  }
 
  Jogador.prototype.adicionarPalavrasCache = function(){
