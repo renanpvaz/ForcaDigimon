@@ -9,7 +9,7 @@
         "Yoshi",
         "Koopa troop",
         "Toad",
-        "Princess Daisy",
+        "Princes Daisy",
         "Waluigi",
         "Wario",
         "Pauline",
@@ -68,5 +68,18 @@
       "categoria": "Pokémon Series"
     }
   ],
-  []
+  [
+    {
+      "nome": "Renan",
+      "Dificuldade": 0,
+      "pontuacao": 25,
+      "id": 1
+    },
+    {
+      "nome": "Renan",
+      "Dificuldade": 0,
+      "pontuacao": 7,
+      "id": 2
+    }
+  ]
 ]
