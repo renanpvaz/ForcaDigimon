@@ -76,11 +76,10 @@
             var placarTotal = 'Pontuacao '+ jogo.pontuacao
             $('#valorPontuacao').text(placarTotal);
             $('#menuTopFive').hide();
-            //console.log(jogo);
           });
 
           $('#btLetra').click(function(){
-            if(jogo.countErros < 6){
+            if(jogo.countErros < 5){
               $('#btLetra').html('Chutar Letra');
               jogo.chutarLetra($('#campoDaLetra').val());
               $('#campoDaLetra').val('');
@@ -101,7 +100,6 @@
               var urlJogadores = 'http://localhost:3000/2';
               var dificuldade = $("#selectDificuldade").val();
               var nomeJogador = $('#Nome').val();
-
               $.post(urlJogadores,{
                 nome: nomeJogador , Dificuldade: dificuldade, pontuacao: jogo.pontuacao
               });
