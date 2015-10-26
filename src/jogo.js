@@ -1,7 +1,6 @@
 function Jogo(jogador, dificuldade){
   atribuirPalavraAleatoria(dificuldade);
   this.palavra = $('#palavra').text();
-  console.log(this.palavra);
   this.espacosPalavra = substituirPorUnderline(this.palavra);
   this.countErros = 0;
   this.dificuldade = dificuldade;
@@ -29,7 +28,6 @@ Jogo.prototype.atribuirPalavraAleatoria = function(){
       function(response){
         palavraResposta = response[index].toLowerCase();
         while(self.jogador.verificarPalavras(palavraResposta)){
-          console.log('Palavra repetida!');
           palavraResposta = response[Math.floor(Math.random() * (5))];
         };
         self.palavra = palavraResposta;
@@ -41,7 +39,11 @@ Jogo.prototype.atribuirPalavraAleatoria = function(){
 }
 
 Jogo.prototype.chutarLetra = function(letra){
+  var verificaLetra = $.inArray(letra, this.letrasUsadas);
   if(letra === ''){
+
+  }
+  else if(verificaLetra === 0){
 
   }
   else{
