@@ -97,7 +97,7 @@
           });
 
           $('#btLetra').click(function(){
-            if(jogo.countErros < 6){
+            if(jogo.countErros < 5){
               $('#btLetra').html('Chutar Letra');
               jogo.chutarLetra($('#campoDaLetra').val());
               $('#campoDaLetra').val('');
